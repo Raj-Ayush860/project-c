@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char str[100];
+    int counts[5] = {0}; // array to store counts for each category
+
+    printf("Enter a string: ");
+    fgets(str, 100, stdin); // get input string from user
+
+    // loop through each character in the string
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (isupper(str[i])) { // check if uppercase alphabet
+            counts[0]++;
+            printf("%c is an uppercase alphabet\n", str[i]);
+        }
+        else if (islower(str[i])) { // check if lowercase alphabet
+            counts[1]++;
+            printf("%c is a lowercase alphabet\n", str[i]);
+        }
+        else if (isdigit(str[i])) { // check if digit
+            counts[2]++;
+            printf("%c is a digit\n", str[i]);
+        }
+        else if (isspace(str[i])) { // check if whitespace
+            counts[3]++;
+            printf("%c is a whitespace\n", str[i]);
+        }
+        else { // assume everything else is a special symbol
+            counts[4]++;
+            printf("%c is a special symbol\n", str[i]);
+        }
+    }
+
+    // print the counts for each category
+    printf("\nCounts:\n");
+    printf("Uppercase Alphabets: %d\n", counts[0]);
+    printf("Lowercase Alphabets: %d\n", counts[1]);
+    printf("Digits: %d\n", counts[2]);
+    printf("Whitespaces: %d\n", counts[3]);
+    printf("Special Symbols: %d\n", counts[4]);
+
+    return 0;
+}
