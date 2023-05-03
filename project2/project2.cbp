@@ -30,6 +30,5 @@ int main() {
     printf("Consonants = %d\n", consonants);
     printf("Space = %d\n", spaces);
     printf("Special Characters = %d\n", special);
-
-    return 0;
+return=0;
 }
